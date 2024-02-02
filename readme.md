@@ -8,6 +8,9 @@ PHP attributes are not decorators though, they can be interpreted and implemente
 This is a possible implementation (two actually), and it's a reminder to myself for future reference as I'm old
 and I forget things.
 
+_Disclaimer: This may have been done before, I don't know. I just wanted to explore
+what attributes can do._
+
 ## Data Model
 Consider a data model, where we want to describe certain properties with value based
 restrictions.
