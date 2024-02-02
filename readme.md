@@ -74,7 +74,7 @@ interface IntConstraint {
 }
 ```
 
-In the Provider when fetching for the attributes, this IntConstraint can be used to fetch only attributes
+Later when fetching for the attributes, this IntConstraint can be used to fetch only attributes
 which **implement this interface only**.
 
 ## Check By Provider
