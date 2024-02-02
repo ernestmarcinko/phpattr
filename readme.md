@@ -51,8 +51,8 @@ readonly class MaximumInt implements IntConstraint {
      * @return bool
      */
     public function check( int $value ): bool {
-		return $this->value >= $value;
-	}
+        return $this->value >= $value;
+    }
 }
 ```
 
@@ -60,7 +60,6 @@ Let's use a common interface for integer related checks for convenience.
 The [ReflectionProperty::getAttributes](https://www.php.net/manual/en/reflectionproperty.getattributes.php) function can filter by common ancestors, so it becomes handy later on.
 
 ```
-<?php
 interface IntConstraint {
     /**
      * Integer to check
