@@ -3,8 +3,10 @@
 namespace PLAYGROUND;
 interface IntConstraint {
     /**
-     * @param mixed $value
+     * Integer to check
+     *
+     * @param int $value
      * @return bool
      */
-	function check( mixed $value ): bool;
+	function check( int $value ): bool;
 }

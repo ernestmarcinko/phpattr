@@ -4,7 +4,7 @@ namespace PLAYGROUND;
 #[\Attribute(\Attribute::TARGET_PROPERTY)]
 readonly class MinimumInt implements IntConstraint {
     /**
-     * The maximum value allowed via #[Maximum(value)]
+     * The minimum value allowed via #[Minimum(value)]
      * @param int $value
      */
     public function __construct( private int $value ) {}
@@ -15,6 +15,6 @@ readonly class MinimumInt implements IntConstraint {
      * @return bool
      */
     public function check( int $value ): bool {
-		return $this->value >= $value;
+		return $this->value <= $value;
 	}
 }

@@ -11,10 +11,10 @@ readonly class MaximumInt implements IntConstraint {
 
     /**
      *
-     * @param mixed $value
+     * @param int $value
      * @return bool
      */
-    public function check( mixed $value ): bool {
+    public function check( int $value ): bool {
 		return $this->value >= $value;
 	}
 }

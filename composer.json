@@ -1,2 +1,9 @@
 {
+  "type": "library",
+  "private": true,
+  "autoload": {
+    "psr-4": {
+      "PLAYGROUND\\": "src/"
+    }
+  }
 }
