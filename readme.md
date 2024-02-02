@@ -1,11 +1,11 @@
-# PHP Attributes used for data check
+# PHP Attributes for data validation
 
 While looking at the [tsed attribute decorator example](https://tsed.io/docs/model.html#example), I was wondering if there is any
 way to implement similar feature in PHP via the [attribute features](https://www.php.net/manual/en/language.attributes.overview.php).
 
 PHP attributes are not decorators though, they can be interpreted and implemented in many different ways.
 
-This is one possible implementation, and it's a reminder to myself for future reference as I'm old
+This is a possible implementation (two actually), and it's a reminder to myself for future reference as I'm old
 and I forget things.
 
 ## Data Model
@@ -24,13 +24,15 @@ readonly class MyDataModel {
 }
 ```
 
-This looks clean as we can define the constraints **in the model itself**, however the constraint logic
-has to be delegated to a provider.
+This looks clean as we can define the constraints **in the model itself**.
+In the examples below I will explore two ways to validate this data model:
+ - When used by a [Provider Service](#check-by-provider)
+ - Encapsulated in the [Data Model](#check-by-data-model-constructor) itself (self-check)
 
 ## Attributes
 
-The attribute classes could implement a check() method, which could be used in the provider to
-run the checks whenever needed.
+The attribute classes could implement a check() method, which could be used for checks later on
+in the Reflections.
 
 For example the **MaximumInt** attribute class:
 
@@ -54,7 +56,8 @@ readonly class MaximumInt implements IntConstraint {
 }
 ```
 
-And to make it more convenient in the provider, a common interface is used for integer related checks.
+Let's use a common interface for integer related checks for convenience.
+The [ReflectionProperty::getAttributes](https://www.php.net/manual/en/reflectionproperty.getattributes.php) function can filter by common ancestors, so it becomes handy later on.
 
 ```
 <?php
