@@ -59,7 +59,7 @@ readonly class MaximumInt implements IntConstraint {
 Let's use a common interface for integer related checks for convenience.
 The [ReflectionProperty::getAttributes](https://www.php.net/manual/en/reflectionproperty.getattributes.php) function can filter by common ancestors, so it becomes handy later on.
 
-```
+```php
 interface IntConstraint {
     /**
      * Integer to check
